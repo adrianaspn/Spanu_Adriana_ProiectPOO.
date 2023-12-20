@@ -726,6 +726,8 @@ public:
 		return "Prenume: " + Jurnalist::getPrenume();
 	}
 
+	
+
 	friend ostream& operator<<(ostream& ecran, const Reporter& r) {
 		ecran << (Jurnalist)r;
 		ecran << r.specializare << " ";
@@ -824,258 +826,269 @@ public:
 
 int main() {
 	
-	Reporter r1;
-	r1.afisare();
+	Reporter rep1;
+	rep1.afisare();
 
 
 
-	//Jurnalist j1;
-	//j1.afisare();
-	//cout << endl;
+	Jurnalist j1;
+	j1.afisare();
 
-	//Jurnalist j2("Adriana", 19);
-	//j2.afisare();
+	j1 = rep1; ;
 
-	//j2.setNume("Spanu");
-	//cout << endl;
-	//j2.afisare();
-	//cout << endl;
-	//j2.setAnexp(5);
-	//j2.afisare();
-	//cout << endl;
-	//if (j2.getAnexp() > 0)
-	//	cout << "Angajat calificat";
-	//else
-	//	cout << "Angajat necalificat";
-	//cout << endl << endl;
-	//cout << "ID: " << j2.getID() << endl;
-	//cout << "Prenume: " << j2.getPrenume() << endl;
-	//cout << "Varsta: " << j2.getVarsta() << endl;
-	//cout << "An experienta: " << j2.getAnexp() << endl << endl;
+	cout << j1.getPrenume() << endl;
+	cout << rep1.getPrenume() << endl;
 
-	//Jurnalist j3("Railean", "Dan", 22, 3);
-	//ofstream file("fisier.txt", ios::out);
-	//file << j3;
-	//j3.afisare();
-
-	//Jurnalist jCitit;
-	//ifstream fisIn("fisier.txt", ios::in);
-	//fisIn >> jCitit;
-	//cout << jCitit;
-
-	//cout << endl;
-	//Jurnalist j4(j3);
-	//j4.afisare();
-	//cout << endl << endl;
-
-	//j1 = j3;
-	//j1.afisare();
-	//cout << endl;
+	Reporter rep2 = rep1;
+	Reporter rep3; 
+	rep3 = rep1; 
+	cout << rep1; 
 
 
-	//if (j2 < j3) {
-	//	cout << j2.getPrenume() << " este mai tanar decat " << j3.getPrenume() << endl;
-	//}
-	//else if (j2 > j3) {
-	//	cout << j2.getPrenume() << " este mai in varsta decat " << j3.getPrenume() << endl;
-	//}
-	//else {
-	//	cout << j2.getPrenume() << " si " << j3.getPrenume() << " au aceeasi varsta" << endl;
-	//}
-	//if (j1 == j2) {
-	//	cout << "Jurnalistii sunt identici." << endl;
-	//}
-	//else
-	//	cout << "Jurnalistii sunt diferiti." << endl;
+	cout << endl;
 
-	//Jurnalist* jvector = new Jurnalist[3];
-	//jvector[0] = j3;
-	//jvector[1] = j1;
-	//jvector[2] = j2;
+	Jurnalist j2("Adriana", 19);
+	j2.afisare();
 
-	//for (int i = 0; i < 3; i++) {
-	//	cout << jvector[i];
-	//}
+	j2.setNume("Spanu");
+	cout << endl;
+	j2.afisare();
+	cout << endl;
+	j2.setAnexp(5);
+	j2.afisare();
+	cout << endl;
+	if (j2.getAnexp() > 0)
+		cout << "Angajat calificat";
+	else
+		cout << "Angajat necalificat";
+	cout << endl << endl;
+	cout << "ID: " << j2.getID() << endl;
+	cout << "Prenume: " << j2.getPrenume() << endl;
+	cout << "Varsta: " << j2.getVarsta() << endl;
+	cout << "An experienta: " << j2.getAnexp() << endl << endl;
 
-	//Jurnalist** jmatrice = new Jurnalist * [3];
-	//for (int i = 0; i < 3; i++) {
-	//	jmatrice[i] = new Jurnalist[3];
-	//}
+	Jurnalist j3("Railean", "Dan", 22, 3);
+	ofstream file("fisier.txt", ios::out);
+	file << j3;
+	j3.afisare();
 
-	//for (int i = 0; i < 3; i++) {
-	//	for (int j = 0; j < 3; j++) {
-	//		cout << jmatrice[i][j];
-	//	}
-	//}
+	Jurnalist jCitit;
+	ifstream fisIn("fisier.txt", ios::in);
+	fisIn >> jCitit;
+	cout << jCitit;
 
-	//delete[]jmatrice;
-	//delete[]jvector;
+	cout << endl;
+	Jurnalist j4(j3);
+	j4.afisare();
+	cout << endl << endl;
 
-
-	//Jurnalist::AfisareNrJurnalisti();
-
-
-	//Camera c1;
-	//c1.afisare();
-
-	//Camera c2("Nikon", 4);
-	//c2.afisare();
-
-	//Camera c3("Sony", 3, new float[3] {1200, 1500, 1800});
-	//ofstream fileC("fisierc.txt", ios::out);
-	//fileC << c3;
-	//c3.afisare();
-	//cout << endl;
-	//cout << "Marca camerei: " << c3.getMarca() << endl;
-	//cout << "Numar de componente: " << c3.getNrComponente() << endl;
-
-	//Camera cCitit;
-	//ifstream fisInc("fisierc.txt", ios::in);
-	//fisInc >> cCitit;
-	//cout << cCitit;
-
-	//Camera c4(c3);
-	//c4.afisare();
-	//cout << endl;
-	//Camera c5("Canon", 2, new float[2] {15012, 208274});
-	//c5.afisare();
-	//Camera c6;
-	//cout << endl;
+	j1 = j3;
+	j1.afisare();
+	cout << endl;
 
 
-	//c3.setPreturi(4, new float[4] {2000, 2200, 2500, 2700});
-	//float* preturiC3 = c3.getPreturi();
-	//for (int i = 0; i < c3.getNrComponente(); i++) {
-	//	cout << "Pretul componentei " << i + 1 << ": " << preturiC3[i] << endl;
-	//}
-	//delete[] preturiC3;
+	if (j2 < j3) {
+		cout << j2.getPrenume() << " este mai tanar decat " << j3.getPrenume() << endl;
+	}
+	else if (j2 > j3) {
+		cout << j2.getPrenume() << " este mai in varsta decat " << j3.getPrenume() << endl;
+	}
+	else {
+		cout << j2.getPrenume() << " si " << j3.getPrenume() << " au aceeasi varsta" << endl;
+	}
+	if (j1 == j2) {
+		cout << "Jurnalistii sunt identici." << endl;
+	}
+	else
+		cout << "Jurnalistii sunt diferiti." << endl;
 
-	//cout << endl;
+	Jurnalist* jvector = new Jurnalist[3];
+	jvector[0] = j3;
+	jvector[1] = j1;
+	jvector[2] = j2;
 
+	for (int i = 0; i < 3; i++) {
+		cout << jvector[i];
+	}
 
-	//if (c1 != c2) {
-	//	cout << "Camerele sunt diferite." << endl;
-	//}
+	Jurnalist** jmatrice = new Jurnalist * [3];
+	for (int i = 0; i < 3; i++) {
+		jmatrice[i] = new Jurnalist[3];
+	}
 
-	//c1 = c3;
-	//c1.afisare();
-	//cout << endl;
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			cout << jmatrice[i][j];
+		}
+	}
 
-	//c1 = c5 + c3;
-	//c1.afisare();
-	//c6 = c5 - 15;
-	//cout << endl;
-	//c5.afisare();
-	//cout << endl;
-
-	//cout << c4 << endl;
-
-	//Camera::AfisareNrCamere();
-
-	//Camera* cvector = new Camera[3];
-	//cvector[0] = c3;
-	//cvector[1] = c1;
-	//cvector[2] = c5;
-
-	//for (int i = 0; i < 3; i++) {
-	//	cout << cvector[i] << endl << endl;
-	//}
-
-	//cout << endl;
-
-	//Camera** cmatrice = new Camera * [3];
-	//for (int i = 0; i < 3; i++) {
-	//	cmatrice[i] = new Camera[3];
-	//}
-
-	//for (int i = 0; i < 3; i++) {
-	//	for (int j = 0; j < 3; j++) {
-	//		cout << cmatrice[i][j];
-	//	}
-	//}
-
-	////NU SE AFIS PRETURILE IN MATRICE????????
-
-	//delete[]cmatrice;
-	//delete[]cvector;
-
-	//cout << endl;
+	delete[]jmatrice;
+	delete[]jvector;
 
 
-	//Articol a1;
-	//a1.afisare();
-
-	//Articol a2("Stamati Maria", 2023);
-	//a2.afisare();
-
-	//++a2;
-	//cout << endl;
-	//a2.afisare();
-
-	//Articol a3("Introducere in Machine Learning", "Alex", 2022);
-	//a3.afisare();
-	//cout << "Titlul articolului: " << a3.getTitlu() << endl;
-	//cout << "Autorul: " << a3.getAutor() << endl;
-	//cout << "Anul publicarii: " << a3.getAnPublicare() << endl;
-
-	//a3.setTitlu("Artele Programarii Orientate Obiect");
-	//a3.setAutor("Tania");
-	//a3.setAnPublicare(2024);
-
-	//a3.afisare();
-
-	//--a3;
-	//cout << endl;
-	//a3.afisare();
-
-	//Articol a4(a3);
-	//a4.afisare();
-	//cout << endl;
-
-	//a1 = a4;
-	//a1.afisare();
+	Jurnalist::AfisareNrJurnalisti();
 
 
-	//Articol::AfisareNrArticole();
+	Camera c1;
+	c1.afisare();
 
-	//ProcesareJurnalist(j2);
-	//ProcesareArticol(a3);
-	//cout << endl;
+	Camera c2("Nikon", 4);
+	c2.afisare();
 
-	//Articol* avector = new Articol[3];
-	//avector[0] = a3;
-	//avector[1] = a1;
-	//avector[2] = a2;
+	Camera c3("Sony", 3, new float[3] {1200, 1500, 1800});
+	ofstream fileC("fisierc.txt", ios::out);
+	fileC << c3;
+	c3.afisare();
+	cout << endl;
+	cout << "Marca camerei: " << c3.getMarca() << endl;
+	cout << "Numar de componente: " << c3.getNrComponente() << endl;
 
-	//for (int i = 0; i < 3; i++) {
-	//	cout << avector[i];
-	//}
+	Camera cCitit;
+	ifstream fisInc("fisierc.txt", ios::in);
+	fisInc >> cCitit;
+	cout << cCitit;
 
-	//Articol** amatrice = new Articol * [3];
-	//for (int i = 0; i < 3; i++) {
-	//	amatrice[i] = new Articol[3];
-	//}
+	Camera c4(c3);
+	c4.afisare();
+	cout << endl;
+	Camera c5("Canon", 2, new float[2] {15012, 208274});
+	c5.afisare();
+	Camera c6;
+	cout << endl;
 
-	//for (int i = 0; i < 3; i++) {
-	//	for (int j = 0; j < 3; j++) {
-	//		cout << amatrice[i][j];
-	//	}
-	//}
 
-	//delete[]amatrice;
-	//delete[]avector;
+	c3.setPreturi(4, new float[4] {2000, 2200, 2500, 2700});
+	float* preturiC3 = c3.getPreturi();
+	for (int i = 0; i < c3.getNrComponente(); i++) {
+		cout << "Pretul componentei " << i + 1 << ": " << preturiC3[i] << endl;
+	}
+	delete[] preturiC3;
 
-	//Revista r1;
-	//Articol a1;
-	//cin >> a1;
-	//cout << r1[0];
-	//r1[1] = a1;
-	//cout << r1[0];
-	//cout << ": " << r1[0][1] << endl;
-	//cout << r1[0].getTitlu();
+	cout << endl;
 
-	//Revista r2(r1);
-	//r2.afisare();
+
+	if (c1 != c2) {
+		cout << "Camerele sunt diferite." << endl;
+	}
+
+	c1 = c3;
+	c1.afisare();
+	cout << endl;
+
+	c1 = c5 + c3;
+	c1.afisare();
+	c6 = c5 - 15;
+	cout << endl;
+	c5.afisare();
+	cout << endl;
+
+	cout << c4 << endl;
+
+	Camera::AfisareNrCamere();
+
+	Camera* cvector = new Camera[3];
+	cvector[0] = c3;
+	cvector[1] = c1;
+	cvector[2] = c5;
+
+	for (int i = 0; i < 3; i++) {
+		cout << cvector[i] << endl << endl;
+	}
+
+	cout << endl;
+
+	Camera** cmatrice = new Camera * [3];
+	for (int i = 0; i < 3; i++) {
+		cmatrice[i] = new Camera[3];
+	}
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			cout << cmatrice[i][j];
+		}
+	}
+
+	//NU SE AFIS PRETURILE IN MATRICE????????
+
+	delete[]cmatrice;
+	delete[]cvector;
+
+	cout << endl;
+
+
+	Articol a1;
+	a1.afisare();
+
+	Articol a2("Stamati Maria", 2023);
+	a2.afisare();
+
+	++a2;
+	cout << endl;
+	a2.afisare();
+
+	Articol a3("Introducere in Machine Learning", "Alex", 2022);
+	a3.afisare();
+	cout << "Titlul articolului: " << a3.getTitlu() << endl;
+	cout << "Autorul: " << a3.getAutor() << endl;
+	cout << "Anul publicarii: " << a3.getAnPublicare() << endl;
+
+	a3.setTitlu("Artele Programarii Orientate Obiect");
+	a3.setAutor("Tania");
+	a3.setAnPublicare(2024);
+
+	a3.afisare();
+
+	--a3;
+	cout << endl;
+	a3.afisare();
+
+	Articol a4(a3);
+	a4.afisare();
+	cout << endl;
+
+	a1 = a4;
+	a1.afisare();
+
+
+	Articol::AfisareNrArticole();
+
+	ProcesareJurnalist(j2);
+	ProcesareArticol(a3);
+	cout << endl;
+
+	Articol* avector = new Articol[3];
+	avector[0] = a3;
+	avector[1] = a1;
+	avector[2] = a2;
+
+	for (int i = 0; i < 3; i++) {
+		cout << avector[i];
+	}
+
+	Articol** amatrice = new Articol * [3];
+	for (int i = 0; i < 3; i++) {
+		amatrice[i] = new Articol[3];
+	}
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			cout << amatrice[i][j];
+		}
+	}
+
+	delete[]amatrice;
+	delete[]avector;
+
+	Revista r1;
+	cin >> a1;
+	cout << r1[0];
+	r1[1] = a1;
+	cout << r1[0];
+	cout << ": " << r1[0][1] << endl;
+	cout << r1[0].getTitlu();
+
+	Revista r2(r1);
+	r2.afisare();
 
 
 
